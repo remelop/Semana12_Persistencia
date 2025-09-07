@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Inicio - Mi Proyecto Flask{% endblock %}
+{% block content %}
+<h2>Inicio</h2>
+<p>Demostración de persistencia de datos en TXT, JSON, CSV y SQLite.</p>
+<div class="grid">
+    <div>
+        <h3>Acciones con Archivos</h3>
+        <p>
+            <a class="button" href="{{ url_for('guardar_txt') }}">Guardar en TXT</a>
+            <a class="button" href="{{ url_for('leer_txt') }}">Leer TXT</a>
+        </p>
+        <p>
+            <a class="button" href="{{ url_for('guardar_json') }}">Guardar en JSON</a>
+            <a class="button" href="{{ url_for('leer_json') }}">Leer JSON</a>
+        </p>
+        <p>
+            <a class="button" href="{{ url_for('guardar_csv') }}">Guardar en CSV</a>
+            <a class="button" href="{{ url_for('leer_csv') }}">Leer CSV</a>
+        </p>
+    </div>
+    <div>
+        <h3>Acciones con Base de Datos</h3>
+        <p>
+            <a class="button" href="{{ url_for('guardar_db') }}">Guardar en SQLite</a>
+            <a class="button" href="{{ url_for('leer_db') }}">Leer SQLite</a>
+        </p>
+    </div>
+    <div>
+        <h3>Formulario</h3>
+        <p>
+            <a class="button" href="{{ url_for('formulario') }}">Abrir formulario</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

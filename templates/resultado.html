@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Resultado - Mi Proyecto Flask{% endblock %}
+{% block content %}
+<h2>Resultado</h2>
+{% if mensaje %}
+<p>{{ mensaje }}</p>
+{% endif %}
+{% if datos %}
+<table>
+    <thead>
+        <tr>
+            {% for k in encabezados %}
+            <th>{{ k }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for k in encabezados %}
+            <td>{{ fila[k] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<p><a class="button" href="{{ url_for('index') }}">Volver al inicio</a></p>
+{% endblock %}
